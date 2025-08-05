@@ -25,22 +25,22 @@ All these protocols ultimately rely on **TCP/IP** as the underlying network foun
 Every SOAP message follows a standardized XML envelope format with three main components:
 
 ```xml
-
-  
-    
-    
-      admin
-      12345
-    
-    uuid-12345
-  
-  
-    
-    
-      9876
-    
-  
-
+<Envelope xmlns="http://schemas.xmlsoap.org/soap/envelope/">
+  <Header>
+    <!-- Optional: metadata, security, routing information -->
+    <AuthToken>
+      <Username>admin</Username>
+      <Password>12345</Password>
+    </AuthToken>
+    <MessageID>uuid-12345</MessageID>
+  </Header>
+  <Body>
+    <!-- Required: actual request/response data -->
+    <GetUserDetails>
+      <UserId>9876</UserId>
+    </GetUserDetails>
+  </Body>
+</Envelope>
 ```
 
 **Components:**
