@@ -25,6 +25,7 @@
 - Setup bare config:
   - `~/.config/nvim/init.lua` or `init.vim`
 - Start minimal, just set:
+  
   ```vim
   set number
   set relativenumber
@@ -32,6 +33,7 @@
   set tabstop=4 shiftwidth=4 expandtab
   syntax on
   ```
+
 - Begin plugin setup via lazy.nvim or packer.nvim (only when ready)
 
 ---
