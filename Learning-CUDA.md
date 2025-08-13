@@ -32,11 +32,13 @@ I've created a comprehensive learning guide for you . Here's the complete breakd
 - Thread organization and indexing[6]
 
 **Phase 3: Intermediate (4-6 weeks)**
+
 - Shared memory programming
 - Performance optimization techniques
 - Memory access patterns[7]
 
 **Phase 4: Advanced (6-8 weeks)**
+
 - Streams and asynchronous execution
 - Advanced optimization strategies
 - CUDA libraries integration[8]
@@ -46,18 +48,21 @@ I've created a comprehensive learning guide for you . Here's the complete breakd
 ### **Hands-On Projects You Can Build**
 
 **Beginner Projects:**
+
 - Vector addition and matrix multiplication[6]
 - Image processing filters
 - Monte Carlo simulations
 - Basic parallel algorithms[9]
 
 **Intermediate Projects:**
+
 - 2D convolution with shared memory
 - N-body physics simulation
 - Ray tracing renderer
 - Fractal generators[7]
 
 **Advanced Projects:**
+
 - Custom neural network implementation
 - Fluid dynamics simulation
 - Real-time video processing
