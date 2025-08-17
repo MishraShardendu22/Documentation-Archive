@@ -1,7 +1,3 @@
-Here is a concise documentation for getting started with React Flow:
-
-***
-
 # React Flow Quick Docs
 
 ## What is React Flow?
