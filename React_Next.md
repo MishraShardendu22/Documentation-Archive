@@ -1,6 +1,4 @@
-## React and Next.js Deep Dive Documentation
-
----
+# React and Next.js Deep Dive Documentation
 
 ### 1. **React Internals**
 
