@@ -130,8 +130,8 @@ uselearn() {
 
 # Work account
 useccwork() {
-  git config user.name 'Career Cafe'
-  git config user.email 'contactcareercafe@gmail.com'
+  git config user.name 'Work 1'
+  git config user.email 'work1@gmail.com'
   git config commit.gpgsign false
   git config format.signoff true
 }
