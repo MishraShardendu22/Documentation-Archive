@@ -1,9 +1,11 @@
 # Docker Containerization Guide
 
 ## 1. Introduction
+
 This document covers core Docker concepts, architecture, common commands, Dockerfile structure, Docker Compose, networking, volumes, and differences vs virtual machines. Copy and paste for reference.
 
 ## 2. Why Containerize Applications
+
 - Ensure everyone uses the same application version and dependencies.
 - Decouple application version from host environment and package manager versions.
 - Avoid “it works on my machine” issues by replicating the development environment.
@@ -11,7 +13,9 @@ This document covers core Docker concepts, architecture, common commands, Docker
 - Package, ship, and run applications consistently across environments.
 
 ## 3. Docker Architecture Overview
+
 ### 3.1 Docker Components
+
 - **Docker Daemon (dockerd)**  
   - Background service running as root.  
   - Manages building, running, and managing containers.  
@@ -25,6 +29,7 @@ This document covers core Docker concepts, architecture, common commands, Docker
   - Storage and distribution service for Docker images (e.g., Docker Hub, private registry).
 
 ### 3.2 Images vs Containers
+
 - **Image**  
   - Immutable blueprint for creating containers.  
   - Built in layers; each layer adds or modifies files/configuration.  
@@ -35,9 +40,11 @@ This document covers core Docker concepts, architecture, common commands, Docker
   - Own filesystem (union of image layers + writable layer), network interfaces, process space, and environment variables.
 
 ## 4. Core Docker Commands
+
 Use hyphens for options; no long dashes.
 
 ### 4.1 Image Management
+
 - `docker pull <image_name>:<tag>`  
   - Download image from registry.
 - `docker images`  
@@ -46,6 +53,7 @@ Use hyphens for options; no long dashes.
   - Remove one or more images.
 
 ### 4.2 Container Management
+
 - `docker run [OPTIONS] <image_name> [COMMAND] [ARGS...]`  
   - Create and start a container.  
   - Common options:
@@ -73,17 +81,21 @@ Use hyphens for options; no long dashes.
   - Return low-level information on containers or images.
 
 ### 4.3 Daemon Control
+
 - `systemctl start docker` / `systemctl stop docker` (Linux systems with systemd).  
 - Docker daemon must be running for CLI commands to work.
 
 ### 4.4 Registry Login
+
 - `docker login`  
   - Authenticate to a registry (Docker Hub or private registry).
 - `docker logout`  
   - Remove stored credentials.
 
 ## 5. Dockerfile Structure
+
 A Dockerfile defines how to build an image. Basic directives:
+
 ```
 
 FROM \<base\_image>:<tag>
@@ -96,21 +108,27 @@ CMD \["executable", "param1", "param2"]  # default command
 ENTRYPOINT \["executable","param1"]      # fixed entrypoint; CMD provides default args
 
 ````
+
 ### 5.1 Layering
+
 - Each instruction creates a new layer.  
 - Order matters: changes earlier invalidate cached layers for subsequent instructions.  
 - Combine related steps where appropriate (but avoid premature optimization; keep commands clear).
 
 ### 5.2 Build Command
+
 - `docker build -t <image_name>:<version> <context_path>`  
   - `-t`: tag name and version.  
   - Context path: directory containing Dockerfile and necessary files.
 
 ## 6. Docker Compose
+
 Define and run multi-container applications.
 
 ### 6.1 Compose File (docker-compose.yml)
+
 Basic structure:
+
 ```yaml
 version: "3.8"
 services:
@@ -139,89 +157,89 @@ volumes:
 
 ### 6.2 Commands
 
-* `docker compose -f <filename>.yml up -d`
+- `docker compose -f <filename>.yml up -d`
 
-  * Create/start all services in detached mode.
-* `docker compose -f <filename>.yml down`
+  - Create/start all services in detached mode.
+- `docker compose -f <filename>.yml down`
 
-  * Stop and remove containers, networks created by up.
-* By default, Compose sets up a network for services in the same project. No explicit network needed for basic cases.
-* Use named volumes or bind mounts for persistence; see Volumes section.
+  - Stop and remove containers, networks created by up.
+- By default, Compose sets up a network for services in the same project. No explicit network needed for basic cases.
+- Use named volumes or bind mounts for persistence; see Volumes section.
 
 ## 7. Networking
 
-* Default network type for containers: **bridge**.
-* Containers on the same user-defined bridge network can communicate via service name or container name.
-* Publish ports with `-p host_port:container_port` or via Compose ports section.
-* Inspect networks: `docker network ls`, `docker network inspect <network_name>`.
-* Remove unused networks: `docker network rm <network_name>`.
-* Other network drivers: host, none/null.
+- Default network type for containers: **bridge**.
+- Containers on the same user-defined bridge network can communicate via service name or container name.
+- Publish ports with `-p host_port:container_port` or via Compose ports section.
+- Inspect networks: `docker network ls`, `docker network inspect <network_name>`.
+- Remove unused networks: `docker network rm <network_name>`.
+- Other network drivers: host, none/null.
 
-  * **host**: container shares host network stack (Linux only).
-  * **none**: no network connectivity.
+  - **host**: container shares host network stack (Linux only).
+  - **none**: no network connectivity.
 
 ## 8. Volumes and Data Persistence
 
 Persistent data storage options:
 
-* **Named volumes**
+- **Named volumes**
 
-  * Managed by Docker.
-  * Create: `docker volume create <vol_name>`.
-  * List: `docker volume ls`.
-  * Use in run: `-v <vol_name>:<container_path>`.
-  * Remove: `docker volume rm <vol_name>`.
-* **Anonymous volumes**
+  - Managed by Docker.
+  - Create: `docker volume create <vol_name>`.
+  - List: `docker volume ls`.
+  - Use in run: `-v <vol_name>:<container_path>`.
+  - Remove: `docker volume rm <vol_name>`.
+- **Anonymous volumes**
 
-  * Created when `-v <container_path>` without name.
-  * Removed when container removed (unless reused).
-* **Bind mounts**
+  - Created when `-v <container_path>` without name.
+  - Removed when container removed (unless reused).
+- **Bind mounts**
 
-  * Map host directory/file: `-v /host/path:/container/path`.
-  * Useful for development, local code editing.
-* Clean up unused volumes: `docker volume prune`.
+  - Map host directory/file: `-v /host/path:/container/path`.
+  - Useful for development, local code editing.
+- Clean up unused volumes: `docker volume prune`.
 
 ## 9. Docker on Different Operating Systems
 
-* On Linux:
+- On Linux:
 
-  * Docker uses host kernel directly; Linux containers run natively without a hypervisor.
-* On Windows/macOS:
+  - Docker uses host kernel directly; Linux containers run natively without a hypervisor.
+- On Windows/macOS:
 
-  * Docker Desktop runs a lightweight VM (via Hyper-V, WSL2 on Windows; HyperKit or similar on macOS).
-  * Inside VM uses Linux kernel to run containers.
-* Docker Desktop provides GUI, CLI integration, and manages the VM.
+  - Docker Desktop runs a lightweight VM (via Hyper-V, WSL2 on Windows; HyperKit or similar on macOS).
+  - Inside VM uses Linux kernel to run containers.
+- Docker Desktop provides GUI, CLI integration, and manages the VM.
 
 ## 10. Virtual Machines vs Containers
 
-* **Containers**:
+- **Containers**:
 
-  * Use host kernel; isolate at process level.
-  * Lightweight, faster startup, lower overhead.
-  * Limited to same kernel type (Linux containers need Linux kernel). On Windows/macOS, run Linux kernel in lightweight VM.
-* **Virtual Machines**:
+  - Use host kernel; isolate at process level.
+  - Lightweight, faster startup, lower overhead.
+  - Limited to same kernel type (Linux containers need Linux kernel). On Windows/macOS, run Linux kernel in lightweight VM.
+- **Virtual Machines**:
 
-  * Full guest OS on virtualized hardware via hypervisor.
-  * Higher overhead, slower startup.
-  * Can run different OS types (Windows on Linux host, Linux on Windows host).
-* Summary:
+  - Full guest OS on virtualized hardware via hypervisor.
+  - Higher overhead, slower startup.
+  - Can run different OS types (Windows on Linux host, Linux on Windows host).
+- Summary:
 
-  * Containers are lighter but require compatible kernel.
-  * VMs are heavier but more isolated and cross-OS.
+  - Containers are lighter but require compatible kernel.
+  - VMs are heavier but more isolated and cross-OS.
 
 ## 11. Hypervisor Overview
 
-* Software layer enabling multiple OS instances on same physical machine.
-* **Type 1 (bare-metal)**: runs directly on hardware (e.g., VMware ESXi, Microsoft Hyper-V).
-* **Type 2 (hosted)**: runs on host OS (e.g., VirtualBox, VMware Workstation).
-* Docker on Linux does not require a hypervisor for Linux containers. On Windows/macOS, Docker Desktop uses a lightweight VM via a hypervisor layer.
+- Software layer enabling multiple OS instances on same physical machine.
+- **Type 1 (bare-metal)**: runs directly on hardware (e.g., VMware ESXi, Microsoft Hyper-V).
+- **Type 2 (hosted)**: runs on host OS (e.g., VirtualBox, VMware Workstation).
+- Docker on Linux does not require a hypervisor for Linux containers. On Windows/macOS, Docker Desktop uses a lightweight VM via a hypervisor layer.
 
 ## 12. Port Binding
 
-* Purpose: expose container ports to host for access from outside container.
-* Syntax: `-p <host_port>:<container_port>`.
-* Example: `docker run -d -p 8080:80 nginx` exposes container’s port 80 at host port 8080.
-* Multiple bindings allowed: `-p 8080:80 -p 8443:443`.
+- Purpose: expose container ports to host for access from outside container.
+- Syntax: `-p <host_port>:<container_port>`.
+- Example: `docker run -d -p 8080:80 nginx` exposes container’s port 80 at host port 8080.
+- Multiple bindings allowed: `-p 8080:80 -p 8443:443`.
 
 ## 13. Summary of Common Commands
 
@@ -316,7 +334,7 @@ volumes:
 
 ## 16. Notes
 
-* No explicit network configuration needed for basic Compose setups; services join the default network.
-* For production, adjust Dockerfile and Compose for smaller images, non-root users, health checks, and data persistence. (Omit if strictly not needed.)
-* Use version tags for images to ensure consistency.
-* Clean up unused resources regularly: containers, images, volumes, networks.
+- No explicit network configuration needed for basic Compose setups; services join the default network.
+- For production, adjust Dockerfile and Compose for smaller images, non-root users, health checks, and data persistence. (Omit if strictly not needed.)
+- Use version tags for images to ensure consistency.
+- Clean up unused resources regularly: containers, images, volumes, networks.

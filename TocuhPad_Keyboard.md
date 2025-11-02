@@ -1,4 +1,4 @@
-# Enable-Disable TocuhPad and Keyboard of Laptop 
+# Enable-Disable TocuhPad and Keyboard of Laptop
 
 ## 1. `/usr/local/bin/disablekm`
 

@@ -1,4 +1,4 @@
-# LLD 
+# LLD
 
 1. System Design Overview
     1. HLD (High-Level Design): Focuses on system architecture, components, and their interactions.

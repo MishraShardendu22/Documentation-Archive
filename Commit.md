@@ -71,6 +71,7 @@ BREAKING CHANGE: <explanation>
 ```
 
 Example:
+
 ```
 
 feat(auth): update password hashing algorithm

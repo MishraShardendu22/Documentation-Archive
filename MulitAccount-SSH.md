@@ -71,7 +71,7 @@ Host github.com-learning
   * Ignores aliases.
   * Tries all keys until one works → may authenticate with the wrong account.
 
-### Test which key is used:
+### Test which key is used
 
 ```bash
 ssh -T git@github.com-project
@@ -224,11 +224,13 @@ git cm "update readme"
   ```bash
   git remote -v
   ```
+
 * Which SSH key will be used:
 
   ```bash
   ssh -T git@github.com-project
   ```
+
 * Current Git identity:
 
   ```bash

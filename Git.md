@@ -43,291 +43,273 @@
 **1. View Git History**
 
 - Show last 5 commits (detailed):
-    
+
     `git log -n 5`
-    
+
 - Show last 5 commits (compact):
-    
+
     `git log -n 5 --oneline`
-    
+
 - Show full log inline (no pager):
-    
+
     `git --no-pager log`
-    
+
 - Show last commit only (detailed):
-    
+
     `git log -1 --pretty=full`
-    
 
 ---
 
 **2. Edit Last 5 Commits**
 
 - Interactive rebase (edit/reorder/drop):
-    
+
     `git rebase -i HEAD~5`
-    
 
 ---
 
 **3. Amend Last Commit**
 
 - Change commit message only:
-    
+
     `git commit --amend -m "new message"`
-    
+
 - Amend and sign-off:
-    
+
     `git commit --amend -sam "new message"`
-    
 
 ---
 
 **4. Auto Stage + Commit + Sign-off**
 
 - One-shot commit:
-    
+
     `git commit -sam "message"`
-    
 
 ---
 
 **5. Alias: Add + Commit + Push**
 
 - Add alias:
-    
+
     `git config --global alias.cm '!f() { git add . && git commit -sam "$1" && git push; }; f'`
-    
+
 - Then run:
-    
+
     `git cm "message"`
-    
 
 ---
 
 **6. Push Changes**
 
 - Standard push:
-    
+
     `git push`
-    
+
 - If rejected due to upstream changes:
-    
+
     `git pull --rebase`
-    
+
     `git push`
-    
+
 - Force push (use with caution):
-    
+
     `git push --force`
-    
 
 ---
 
 **7. Check Git Identity**
 
 - Global identity:
-    
+
     `git config --global user.name`
-    
+
     `git config --global user.email`
-    
+
 - All config locations:
-    
+
     `git config --list --show-origin`
-    
 
 ---
 
 **8. Verify Sign-off in Commit**
 
 - Check for sign-off in last commit:
-    
+
     `git log -1 --pretty=full`
-    
+
 - Look for:
-    
+
     `Signed-off-by: Name <email>`
-    
 
 ---
 
 **9. Auto Sign Commits Always**
 
 - Enable global sign-off:
-    
+
     `git config --global format.signoff true`
-    
 
 ---
 
 **10. Set Default Branch to Main**
 
 - Set default for future repos:
-    
+
     `git config --global init.defaultBranch main`
-    
+
 - Rename current branch to main:
-    
+
     `git branch -m main`
-    
 
 ---
 
 **11. Remote Setup and Push**
 
 - Add remote manually:
-    
+
     `git remote add origin <url>`
-    
+
 - Change remote URL (e.g., if access denied):
-    
+
     `git remote set-url origin https://github.com/ShardenduMishra22/test-repo.git`
-    
+
 - Push and set upstream:
-    
+
     `git push --set-upstream origin main`
-    
 
 > 🔹 Note: This is needed only once per branch when setting up manually (not needed if cloned)
-> 
+>
 
 ---
 
 **12. Restore and Stage Files**
 
 - Check file states:
-    
+
     `git status`
-    
+
 - Discard unstaged changes:
-    
+
     `git restore <file>`
-    
+
 - Stage changes:
-    
+
     `git add <file>`
-    
+
 - Unstage staged file:
-    
+
     `git reset HEAD <file>`
-    
+
 - Restore to last commit version (alt):
-    
+
     `git checkout HEAD -- <file>`
-    
 
 ---
 
 **13. Branching and Merging**
 
 - Create and switch to new branch:
-    
+
     `git checkout -b feature-1`
-    
+
 - Switch between branches:
-    
+
     `git switch main`
-    
+
 - Merge branch into current:
-    
+
     `git merge feature-1`
-    
 
 ---
 
 **14. Stashing Changes**
 
 - Save uncommitted changes:
-    
+
     `git stash`
-    
+
 - Reapply them later:
-    
+
     `git stash pop`
-    
 
 ---
 
 **15. Reset Hard**
 
 - Remove all changes, reset to last commit:
-    
+
     `git reset --hard`
-    
 
 ---
 
 **16. Dual Account SSH Setup Example (`sm22` + `ms22`)**
 
 - You fork from `sm22` → clone to `ms22`:
-    
+
     `git clone git@github.com:MishraShardendu22/test-repo.git`
-    
+
     `cd test-repo`
-    
+
 - Add upstream for `sm22`:
-    
+
     `git remote add upstream git@github.com:ShardenduMishra22/test-repo.git`
-    
+
 - Check remotes:
-    
+
     `git remote -v`
-    
+
 - Output:
-    
+
     ```
     origin    → ms22 repo
     upstream  → sm22 original
     
     ```
-    
 
 > 🔹 Cloning with SSH works without error if correct key is loaded for that GitHub account.
-> 
+>
 
 ---
 
 **17. Sync Fork with Upstream**
 
 - Fetch latest from original repo:
-    
+
     `git fetch upstream`
-    
+
 - Merge into your local branch:
-    
+
     `git merge upstream/main`
-    
+
 - Push updated branch to your fork:
-    
+
     `git push origin main`
-    
 
 > 🔹 This lets you update your fork without re-forking.
-> 
+>
 
 ---
 
 **18. Merge Conflict Testing Flow**
 
 - On one branch (`main`):
-    
+
     `echo 'line A' >> file && git commit -am "main edit"`
-    
+
 - On another branch (`conflict-branch`):
-    
+
     `echo 'line B' >> file && git commit -am "conflict edit"`
-    
+
 - Merge `conflict-branch` into `main`:
-    
-    `git merge conflict-branch` 
-    
+
+    `git merge conflict-branch`
+
     (You’ll now resolve conflict manually)
-    
 
 ---
 
-**19. Git Repo Version and Tags** 
+**19. Git Repo Version and Tags**
 
 - git tag v1.0.0
 - git push origin v1.0.0
@@ -378,8 +360,8 @@ Avoid the following anti-patterns:
 - Do not group config by environment; treat each variable as independently controlled
 - Use `.env` files only for **local development**
 - For production or CI/CD:
-    - Use system-level environment variable injection
-    - Orchestrate secrets through Docker/Kubernetes/CI/CD platforms (GitHub Actions, Render, Heroku, etc.)
+  - Use system-level environment variable injection
+  - Orchestrate secrets through Docker/Kubernetes/CI/CD platforms (GitHub Actions, Render, Heroku, etc.)
 - Avoid config files that require parsing or language-specific logic
 
 ---
@@ -406,8 +388,8 @@ GoFr uses the `APP_ENV` variable to determine which `.env` file to load:
 
 - If `APP_ENV=dev`, load `configs/.dev.env`
 - If `APP_ENV` is unset:
-    - Try to load `configs/.local.env`
-    - If not found, fallback to `configs/.env`
+  - Try to load `configs/.local.env`
+  - If not found, fallback to `configs/.env`
 
 ---
 
@@ -426,27 +408,27 @@ DB_URL=postgres://user:password@localhost:5432/mydb
 
 ```go
 func loadEnv() {
-	env := os.Getenv("APP_ENV")
-	var envFile string
+ env := os.Getenv("APP_ENV")
+ var envFile string
 
-	switch {
-	case env != "":
-		envFile = "configs/." + env + ".env"
-	case fileExists("configs/.local.env"):
-		envFile = "configs/.local.env"
-	default:
-		envFile = "configs/.env"
-	}
+ switch {
+ case env != "":
+  envFile = "configs/." + env + ".env"
+ case fileExists("configs/.local.env"):
+  envFile = "configs/.local.env"
+ default:
+  envFile = "configs/.env"
+ }
 
-	err := godotenv.Load(envFile)
-	if err != nil {
-		log.Fatalf("Failed to load environment file: %s", envFile)
-	}
+ err := godotenv.Load(envFile)
+ if err != nil {
+  log.Fatalf("Failed to load environment file: %s", envFile)
+ }
 }
 
 func fileExists(path string) bool {
-	_, err := os.Stat(path)
-	return err == nil
+ _, err := os.Stat(path)
+ return err == nil
 }
 
 ```

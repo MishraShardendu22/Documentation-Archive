@@ -22,7 +22,6 @@
 
 WebP reduces image size using two main techniques:
 
-
 ## 1. Better Compression Algorithms
 
 - **Block-based prediction**: Similar to video codecs, predicts pixel blocks from neighbors and stores only the difference.

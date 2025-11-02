@@ -3,8 +3,9 @@
 ## HTTP Evolution Timeline
 
 ### **HTTP/0.9** (1991) - The Beginning
+
 - **Methods**: GET only
-- **Features**: 
+- **Features**:
   - No headers or status codes
   - Text-only responses
   - Single-line requests: `GET /index.html`
@@ -12,8 +13,9 @@
 - **Limitation**: Only static content, no metadata
 
 ### **HTTP/1.0** (1996) - Adding Structure  
+
 - **Methods**: GET, POST, HEAD
-- **New Features**: 
+- **New Features**:
   - Request/response headers (`Content-Type`, `User-Agent`)
   - HTTP status codes (200, 404, 500, etc.)
   - Support for different media types (HTML, images, CSS)
@@ -22,6 +24,7 @@
 - **Impact**: Enabled the early World Wide Web with multimedia content
 
 ### **HTTP/1.1** (1997-1999) - Web Optimization
+
 - **Methods**: GET, POST, PUT, DELETE, OPTIONS, HEAD + PATCH (RFC 5789, 2010)
 - **Key Improvements**:
   - **Persistent connections (Keep-Alive)**: Reuse TCP connections for multiple requests
@@ -33,6 +36,7 @@
 - **Still widely used**: Remains the backbone of most web traffic today
 
 ### **HTTP/2** (2015) - Performance Revolution
+
 - **Methods**: All HTTP/1.1 methods supported
 - **Major Changes**:
   - **Binary framing protocol**: More efficient parsing than text-based HTTP/1.1
@@ -40,13 +44,14 @@
   - **Server Push**: Proactively send resources (CSS, JS) before client requests
   - **Header compression (HPACK)**: Reduce bandwidth usage for repeated headers
   - **Stream prioritization**: Client can specify resource importance
-- **Performance gains**: 
+- **Performance gains**:
   - 20-50% faster page loads
   - Reduced server resource usage
   - Better mobile network performance
 - **Adoption**: Used by 60%+ of web traffic
 
 ### **HTTP/3** (2022) - Next Generation Transport
+
 - **Methods**: All previous HTTP methods supported  
 - **Revolutionary change**: **Built on QUIC protocol over UDP** (abandons TCP)
 - **Key Features**:
@@ -95,11 +100,13 @@
 ## Performance Characteristics
 
 ### **Latency Impact by Protocol**
+
 - **HTTP/1.1**: 100ms baseline (multiple round trips)
 - **HTTP/2**: 60-80ms (multiplexing + server push)  
 - **HTTP/3**: 40-60ms (0-RTT + no blocking)
 
 ### **Bandwidth Efficiency**
+
 - **REST + HTTP/1.1**: High overhead (headers, JSON verbosity)
 - **GraphQL + HTTP/2**: Medium (precise data, compressed headers)
 - **gRPC + HTTP/2**: Low overhead (binary protobuf, header compression)
@@ -107,18 +114,21 @@
 ### **Use Case Recommendations**
 
 **Choose REST when:**
+
 - Building public APIs or web services
 - Need simple, cacheable interactions
 - Working with standard web technologies
 - Team familiar with HTTP conventions
 
 **Choose GraphQL when:**
+
 - Frontend needs vary significantly (mobile vs web)
 - Multiple clients consume same backend
 - Want to reduce API versioning complexity
 - Real-time features are important
 
 **Choose gRPC when:**
+
 - Building internal microservices
 - Performance is critical
 - Need type safety and code generation

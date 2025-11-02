@@ -1,6 +1,7 @@
 # React Flow Quick Docs
 
 ## What is React Flow?
+
 React Flow is a React library to build node-based editors and interactive diagrams with draggable nodes and edges.
 
 ***
@@ -87,20 +88,20 @@ For more complete documentation and advanced use cases, visit the official site:
 
 Would you like me to help you with a sample project or building custom nodes next?
 
-[1] https://reactflow.dev/learn
+[1] <https://reactflow.dev/learn>
 
-[2] https://reactflow.dev/learn/tutorials/getting-started-with-react-flow-components
+[2] <https://reactflow.dev/learn/tutorials/getting-started-with-react-flow-components>
 
-[3] https://reactflow.dev
+[3] <https://reactflow.dev>
 
-[4] https://www.youtube.com/watch?v=GjIumLrN2Zs
+[4] <https://www.youtube.com/watch?v=GjIumLrN2Zs>
 
-[5] https://dev.to/superviz/learn-react-flow-and-how-to-add-real-time-sync-between-participants-2pe8
+[5] <https://dev.to/superviz/learn-react-flow-and-how-to-add-real-time-sync-between-participants-2pe8>
 
-[6] https://reactflow.dev/learn/tutorials/mind-map-app-with-react-flow
+[6] <https://reactflow.dev/learn/tutorials/mind-map-app-with-react-flow>
 
-[7] https://reactflow.dev/learn/concepts/terms-and-definitions
+[7] <https://reactflow.dev/learn/concepts/terms-and-definitions>
 
-[8] https://reactflow.dev/api-reference
+[8] <https://reactflow.dev/api-reference>
 
-[9] https://flow.org/en/docs/react/
+[9] <https://flow.org/en/docs/react/>

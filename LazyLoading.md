@@ -25,6 +25,7 @@
      ```ts
      if (loaded || loading) return
      ```
+
    * `loading = true` → `<ExperienceSkeleton />` displayed.
    * API call → `experiencesAPI.getAllExperiences()`.
    * If success: `experiences` state is updated, `loaded = true`.
@@ -51,16 +52,19 @@ Solution: Using `threshold: 0.25` ensures at least 25% of the section is visible
   ```tsx
   <LoadingState />
   ```
+
 * **Loading (after visible)**
 
   ```tsx
   <ExperienceSkeleton />
   ```
+
 * **Loaded (success)**
 
   ```tsx
   <ExperienceSection experiences={experiences} />
   ```
+
 * **Error (failure)**
 
   * Toast: `"Failed to load experiences"`
