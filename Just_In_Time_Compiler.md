@@ -44,19 +44,25 @@ spider monkey
 
 The JIT compiler runs the program and optimizes it on the fly, using information gathered at runtime (such as which functions are called most often, or what types of data are used). This allows for aggressive, targeted optimizations that static compilers can't always perform.
 
+
 **Key points:**
+
 - JIT can optimize based on actual runtime values and usage patterns.
 - Especially effective for code that runs repeatedly (loops, hot functions).
 - Can de-optimize or re-optimize as program behavior changes.
 
+
 **Examples of JIT engines:**
+
 - PyPy (Python)
 - V8 (JavaScript, used in Chrome/Node.js)
 - SpiderMonkey (JavaScript, Firefox)
 - Java HotSpot (JVM)
 - .NET CLR (CoreCLR, Mono)
 
+
 **Languages with JIT support:**
+
 - Java, C#, JavaScript, Python (PyPy), Dart, Julia, and more.
 
 ---
