@@ -1,23 +1,13 @@
 # Conventional Commits Guide
-
 This project follows the **Conventional Commits** specification to keep commit history clear and structured.
-
 ## Commit Message Format
-
 ```
-
 <type>(<optional scope>): <description>
-
 \[optional body]
-
 \[optional footer(s)]
-
 ```
-
 ---
-
 ## Allowed Types
-
 | Type | Badge | Description |
 |------|-------|-------------|
 | feat | ![feat](https://img.shields.io/badge/feat-new_feature-brightgreen) | New feature |
@@ -34,13 +24,9 @@ This project follows the **Conventional Commits** specification to keep commit h
 | wip | ![wip](https://img.shields.io/badge/wip-work_in_progress-yellowgreen) | Work in progress (not for production) |
 | temp | ![temp](https://img.shields.io/badge/temp-temporary_commit-lightcoral) | Temporary commit, to be squashed later |
 | merge | ![merge](https://img.shields.io/badge/merge-branch_merge-silver) | Branch merge commit |
-
 ---
-
 ## Examples
-
 ```
-
 feat(auth): add JWT-based login
 fix(ui): correct button alignment on mobile
 docs(readme): update installation instructions
@@ -55,24 +41,14 @@ revert: revert "feat(auth): add JWT-based login"
 wip: partial implementation of profile page
 temp: temporary commit for debug logging
 merge: merge branch 'feature/cart'
-
 ```
-
 ---
-
 ## Breaking Changes
-
 If a commit introduces a breaking change, include the following in the body or footer:
-
 ```
-
 BREAKING CHANGE: <explanation>
-
 ```
-
 Example:
 ```
-
 feat(auth): update password hashing algorithm
-
 BREAKING CHANGE: Existing hashed passwords are invalid; users must reset passwords.

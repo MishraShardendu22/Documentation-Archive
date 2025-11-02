@@ -1,9 +1,7 @@
 # LLD 
-
 1. System Design Overview
     1. HLD (High-Level Design): Focuses on system architecture, components, and their interactions.
     2. LLD (Low-Level Design): Focuses on class diagrams, methods, relationships, and design patterns.
-
 2. OOP’s and Why OOP’s?
     1. Pillars of OOP:
         1. Abstraction: Hides complexity, exposes only essentials.
@@ -14,16 +12,13 @@
             1. Example: `ManualCar` and `ElectricCar` inherit from `Car` (`Week 1/Lec3/Inheritance.cpp`).
         4. Polymorphism: Allows different behaviors via method overriding/overloading.
             1. Example: Overloaded `accelerate()` in `Week 1/Lec3/StaticDynamic.cpp`.
-
 3. Association, Aggregation, and Composition
     1. Association: General relationship (e.g., `User` and `Group` in `Week 7/Lec1/main.cpp`).
     2. Aggregation: Whole-part, but parts can exist independently (e.g., `Folder` and `File` in `Week 4/Lec4/main.cpp`).
     3. Composition: Stronger form, parts cannot exist independently (e.g., `Folder` owns its `FileSystemItem` children).
-
 4. Sequence Diagram
     1. Visualizes object interactions over time for a use case.
     2. (Draw as needed for your projects.)
-
 5. SOLID Principles
     1. Single Responsibility Principle (SRP): One reason to change.
         1. Example: `ShoppingCart` vs `ShoppingCartPrinter` (`Week 2/Lec1/LID.cpp`).
@@ -35,7 +30,6 @@
         1. Example: `DepositOnlyAccount` and `WithdrawableAccount`.
     5. Dependency Inversion Principle (DIP): Depend on abstractions, not concretions.
         1. Example: `CartPersistence` interface (`Week 2/Lec1/LID.cpp`).
-
 6. Design Patterns (with Code Examples)
     1. Foundational Patterns
         1. Strategy: `SplitStrategy` (`Week 7/Lec1/main.cpp`), `WalkableRobot` (`Week 2/Lec3/Main.cpp`).
@@ -58,7 +52,6 @@
         1. Composite: `Folder` and `File` (`Week 4/Lec4/main.cpp`).
         2. Template: `ModelTrainer` (`Week 4/Lec5/main.cpp`).
         3. Proxy: `DocumentProxy` (`Week 5/Lec1/main.cpp`).
-
 7. LLD (Low-Level Design) Workflow (How to Approach Any LLD Problem)
     1. Identify Entities and Responsibilities
         1. List main classes/objects and their core responsibilities.
@@ -79,7 +72,6 @@
             2. Example: Testing vending machine states (`Week 7/Lec2/main.cpp`).
     9. Review and Refactor
         1. Check for clarity, simplicity, and adherence to principles.
-
 8. Quick Reference Table (Where to Find Examples)
     1. OOP Pillars: `Week 1/Lec2/Abstraction.cpp`, `Week 1/Lec2/Encapsulation.cpp`, `Week 1/Lec3/Inheritance.cpp`, `Week 1/Lec3/StaticDynamic.cpp`
     2. SOLID: `Week 2/Lec1/LID.cpp`, `Week 1/Lec5/SOL.cpp`
