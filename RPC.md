@@ -1,6 +1,6 @@
-## RPC & gRPC
+# RPC & gRPC
 
-### **RPC (Remote Procedure Call)**
+## **RPC (Remote Procedure Call)**
 
 - A method to execute a function on **another machine** as if it were **local**
 - **Surface level**: Looks like a normal function call
@@ -8,7 +8,7 @@
 - **Traditional issues**: Poor interoperability between different RPC implementations
 - **Use cases**: Internal microservices communication, distributed systems
 
-### **gRPC (Google RPC)**
+## **gRPC (Google RPC)**
 
 - **Modern RPC framework** created by Google (2015)
 - **Transport**: Built entirely on **HTTP/2** (not HTTPS2 - that doesn't exist)

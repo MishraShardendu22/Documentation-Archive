@@ -1,4 +1,6 @@
-Python is not just a language—it has multiple implementations optimized for different platforms, performance requirements, and ecosystems. Below is a detailed breakdown of the most significant Python implementations.
+# Python
+
+Python is not just a language it has multiple implementations optimized for different platforms, performance requirements, and ecosystems. Below is a detailed breakdown of the most significant Python implementations.
 
 ---
 

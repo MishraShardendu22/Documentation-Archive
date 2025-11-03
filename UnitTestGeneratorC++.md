@@ -105,7 +105,7 @@ make -j$(nproc)
 
 **Output:**
 
-```
+```md
 Load config file - main.cc:4
 running on localhost:3000 - main.cc:7
 ```

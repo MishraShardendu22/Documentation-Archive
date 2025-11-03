@@ -1,6 +1,6 @@
 # Learning and Git GitHub Cheatsheet
 
-### Tools/Concepts List
+## Tools/Concepts List
 
 ---
 
@@ -40,7 +40,7 @@
 
 ---
 
-**1. View Git History**
+## **1. View Git History**
 
 - Show last 5 commits (detailed):
 
@@ -60,7 +60,7 @@
 
 ---
 
-**2. Edit Last 5 Commits**
+## **2. Edit Last 5 Commits**
 
 - Interactive rebase (edit/reorder/drop):
 
@@ -68,7 +68,7 @@
 
 ---
 
-**3. Amend Last Commit**
+## **3. Amend Last Commit**
 
 - Change commit message only:
 
@@ -80,7 +80,7 @@
 
 ---
 
-**4. Auto Stage + Commit + Sign-off**
+## **4. Auto Stage + Commit + Sign-off**
 
 - One-shot commit:
 
@@ -88,7 +88,7 @@
 
 ---
 
-**5. Alias: Add + Commit + Push**
+## **5. Alias: Add + Commit + Push**
 
 - Add alias:
 
@@ -100,7 +100,7 @@
 
 ---
 
-**6. Push Changes**
+## **6. Push Changes**
 
 - Standard push:
 
@@ -118,7 +118,7 @@
 
 ---
 
-**7. Check Git Identity**
+## **7. Check Git Identity**
 
 - Global identity:
 
@@ -132,7 +132,7 @@
 
 ---
 
-**8. Verify Sign-off in Commit**
+## **8. Verify Sign-off in Commit**
 
 - Check for sign-off in last commit:
 
@@ -144,7 +144,7 @@
 
 ---
 
-**9. Auto Sign Commits Always**
+## **9. Auto Sign Commits Always**
 
 - Enable global sign-off:
 
@@ -152,7 +152,7 @@
 
 ---
 
-**10. Set Default Branch to Main**
+## **10. Set Default Branch to Main**
 
 - Set default for future repos:
 
@@ -164,7 +164,7 @@
 
 ---
 
-**11. Remote Setup and Push**
+## **11. Remote Setup and Push**
 
 - Add remote manually:
 
@@ -183,7 +183,7 @@
 
 ---
 
-**12. Restore and Stage Files**
+## **12. Restore and Stage Files**
 
 - Check file states:
 
@@ -207,7 +207,7 @@
 
 ---
 
-**13. Branching and Merging**
+## **13. Branching and Merging**
 
 - Create and switch to new branch:
 
@@ -223,7 +223,7 @@
 
 ---
 
-**14. Stashing Changes**
+## **14. Stashing Changes**
 
 - Save uncommitted changes:
 
@@ -235,7 +235,7 @@
 
 ---
 
-**15. Reset Hard**
+## **15. Reset Hard**
 
 - Remove all changes, reset to last commit:
 
@@ -243,7 +243,7 @@
 
 ---
 
-**16. Dual Account SSH Setup Example (`sm22` + `ms22`)**
+## **16. Dual Account SSH Setup Example (`sm22` + `ms22`)**
 
 - You fork from `sm22` → clone to `ms22`:
 
@@ -261,7 +261,7 @@
 
 - Output:
 
-    ```
+    ```md
     origin    → ms22 repo
     upstream  → sm22 original
     
@@ -272,7 +272,7 @@
 
 ---
 
-**17. Sync Fork with Upstream**
+## **17. Sync Fork with Upstream**
 
 - Fetch latest from original repo:
 
@@ -291,7 +291,7 @@
 
 ---
 
-**18. Merge Conflict Testing Flow**
+## **18. Merge Conflict Testing Flow**
 
 - On one branch (`main`):
 
@@ -309,14 +309,14 @@
 
 ---
 
-**19. Git Repo Version and Tags**
+## **19. Git Repo Version and Tags**
 
 - git tag v1.0.0
 - git push origin v1.0.0
 
 ---
 
-# 12-Factor Config Management – Technical Summary
+## 12-Factor Config Management – Technical Summary
 
 ## Purpose
 
@@ -368,7 +368,7 @@ Avoid the following anti-patterns:
 
 ## GoFr-Compatible Directory Structure
 
-```
+```md
 my-gofr-app/
 ├── configs/
 │   ├── .local.env
@@ -395,7 +395,7 @@ GoFr uses the `APP_ENV` variable to determine which `.env` file to load:
 
 ## Sample Environment File (`.dev.env`)
 
-```
+```md
 APP_NAME=my-dev-service
 HTTP_PORT=9001
 DB_URL=postgres://user:password@localhost:5432/mydb
@@ -431,7 +431,7 @@ func fileExists(path string) bool {
  return err == nil
 }
 
-```
+```md
 
 ---
 

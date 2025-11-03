@@ -84,7 +84,7 @@ Below is the **complete and updated technical documentation** on **Compilation M
 
 ---
 
-# **Compilation Models**
+## **Compilation Models**
 
 ## 1. Static Compilation
 

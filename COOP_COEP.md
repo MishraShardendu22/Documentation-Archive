@@ -1,10 +1,12 @@
+# Cross-Origin-Opener-Policy (COOP) and Cross-Origin-Embedder-Policy (COEP) Issues
+
 Your page’s COOP and **Cross-Origin-Embedder-Policy (COEP)** headers don’t match what the browser expects, so it blocks cross-origin access or SharedArrayBuffer usage.
 
 Typical causes:
 
 * Missing or conflicting headers:
 
-  ```
+  ```md
   Cross-Origin-Opener-Policy: same-origin
   Cross-Origin-Embedder-Policy: require-corp
   ```

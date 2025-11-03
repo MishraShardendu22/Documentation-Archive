@@ -4,7 +4,7 @@ This project follows the **Conventional Commits** specification to keep commit h
 
 ## Commit Message Format
 
-```
+```md
 
 <type>(<optional scope>): <description>
 
@@ -39,7 +39,7 @@ This project follows the **Conventional Commits** specification to keep commit h
 
 ## Examples
 
-```
+```md
 
 feat(auth): add JWT-based login
 fix(ui): correct button alignment on mobile
@@ -64,7 +64,7 @@ merge: merge branch 'feature/cart'
 
 If a commit introduces a breaking change, include the following in the body or footer:
 
-```
+```md
 
 BREAKING CHANGE: <explanation>
 
@@ -72,7 +72,7 @@ BREAKING CHANGE: <explanation>
 
 Example:
 
-```
+```md
 
 feat(auth): update password hashing algorithm
 

@@ -1,6 +1,6 @@
-### Official Documentation
+# Official Documentation
 
-#### 1. **Integration with Existing Apps** (Android + iOS)
+## 1. **Integration with Existing Apps** (Android + iOS)
 
 Step-by-step guide to embed React Native components into native apps:
 
@@ -21,7 +21,7 @@ Step-by-step guide to embed React Native components into native apps:
 
 ---
 
-#### 2. **Communication Between Native and React Native**
+## 2. **Communication Between Native and React Native**
 
 Mechanisms to pass data and callbacks between native and RN layers:
 
@@ -32,7 +32,7 @@ Mechanisms to pass data and callbacks between native and RN layers:
 
 ---
 
-#### 3. **Native Modules & TurboModules**
+## 3. **Native Modules & TurboModules**
 
 When you need JS to call platform-specific features:
 
@@ -52,7 +52,7 @@ When you need JS to call platform-specific features:
 
 ---
 
-### Community Tutorial (Callstack – Mastodon Brownfield Integration)
+## Community Tutorial (Callstack – Mastodon Brownfield Integration)
 
 Real-world guide applying to iOS and Android native apps:
 
@@ -65,7 +65,7 @@ Real-world guide applying to iOS and Android native apps:
 
 ---
 
-### StackOverflow Tips
+## StackOverflow Tips
 
 * Embed RN into native apps using `RCTRootView` for iOS or `ReactActivity` for Android
   ([Stack Overflow][7])
@@ -74,7 +74,7 @@ Real-world guide applying to iOS and Android native apps:
 
 ---
 
-### Summary Table
+## Summary Table
 
 | Platform | Official Documentation                                          | Highlights                                               |
 | -------- | --------------------------------------------------------------- | -------------------------------------------------------- |
@@ -84,7 +84,7 @@ Real-world guide applying to iOS and Android native apps:
 
 ---
 
-### Next Steps
+## Next Steps
 
 1. Pick your target platform.
 2. Use “Integration with Existing Apps” guide as skeleton.

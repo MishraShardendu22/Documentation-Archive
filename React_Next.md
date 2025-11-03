@@ -1,14 +1,14 @@
 # React and Next.js Deep Dive Documentation
 
-### 1. **React Internals**
+## 1. **React Internals**
 
-#### a) Virtual DOM (VDOM) vs Real DOM
+### a) Virtual DOM (VDOM) vs Real DOM
 
 * **Virtual DOM**: In-memory JS object representation of the UI.
 * **Real DOM**: Browser's actual DOM.
 * **Why VDOM is faster**: React diffs VDOM trees and only applies minimal necessary changes to Real DOM.
 
-#### b) Fiber Architecture
+### b) Fiber Architecture
 
 * Fiber is React's reconciliation engine.
 * Represents **units of work**.
@@ -17,20 +17,20 @@
 * **Render Phase**: build workInProgress tree, calculate changes.
 * **Commit Phase**: apply changes to real DOM.
 
-#### c) Hooks Internals
+### c) Hooks Internals
 
 * `useState` stores state in Fiber's hook list.
 * `useEffect` collects effects in linked list, executed after commit.
 * `useLayoutEffect` runs before paint.
 * Hooks only work on client-side, not SSR.
 
-#### d) Reconciliation and Optimizations
+### d) Reconciliation and Optimizations
 
 * **Keys**: identify stable elements in lists.
 * **Memoization**: `React.memo`, `useMemo` prevent unnecessary re-renders.
 * **Lazy loading**: `React.lazy` for code splitting.
 
-#### e) Summary
+### e) Summary
 
 * React is a **JS layer orchestrating UI efficiently**.
 * VDOM + Fiber = optimized updates.
@@ -39,9 +39,9 @@
 
 ---
 
-### 2. **Next.js Overview**
+## 2. **Next.js Overview**
 
-#### a) Differences from React
+### a) Differences from React
 
 | Feature             | React                 | Next.js            |
 | ------------------- | --------------------- | ------------------ |
@@ -51,9 +51,9 @@
 | SEO                 | Poor                  | Good with SSR/SSG  |
 | Bundle optimization | Manual                | Automatic          |
 
-#### b) Rendering Modes
+### b) Rendering Modes
 
-**Client-Side Rendering (CSR)**
+### **Client-Side Rendering (CSR)**
 
 ```jsx
 useEffect(() => {
@@ -63,7 +63,7 @@ useEffect(() => {
 
 * Data fetched after page load.
 
-**Server-Side Rendering (SSR)**
+### **Server-Side Rendering (SSR)**
 
 ```jsx
 export async function getServerSideProps() {
@@ -76,7 +76,7 @@ export async function getServerSideProps() {
 * HTML generated on each request.
 * Excellent SEO.
 
-**Static Site Generation (SSG)**
+### **Static Site Generation (SSG)**
 
 ```jsx
 export async function getStaticProps() {
@@ -89,7 +89,7 @@ export async function getStaticProps() {
 * HTML generated at build time.
 * Extremely fast, cached.
 
-**Incremental Static Regeneration (ISR)**
+### **Incremental Static Regeneration (ISR)**
 
 ```jsx
 export async function getStaticProps() {
@@ -102,16 +102,16 @@ export async function getStaticProps() {
 
 * SSG + dynamic regeneration.
 
-#### c) File-based Routing
+### c) File-based Routing
 
-```
+```md
 /pages
   index.js       -> "/"
   about.js       -> "/about"
   blog/[id].js   -> "/blog/:id"
 ```
 
-#### d) API Routes
+### d) API Routes
 
 ```js
 export default function handler(req, res) {
@@ -124,7 +124,7 @@ export default function handler(req, res) {
 
 ---
 
-### 3. **SSR vs SSG**
+## 3. **SSR vs SSG**
 
 | Feature         | SSR                | SSG                          |
 | --------------- | ------------------ | ---------------------------- |
@@ -141,7 +141,7 @@ export default function handler(req, res) {
 
 ---
 
-### 4. **SSR + Client-side Components (Partial Hydration)**
+## 4. **SSR + Client-side Components (Partial Hydration)**
 
 * SSR generates initial HTML.
 * Client-side React hydrates the page.
@@ -183,7 +183,7 @@ export default function UserWidget() {
 
 ---
 
-### 5. **Netflix Example**
+## 5. **Netflix Example**
 
 * Landing page performance experiment: temporarily switched from React → vanilla JS in 2017 for static content.
 * Now, Netflix uses React for **both landing page and dynamic pages**.
@@ -196,7 +196,7 @@ export default function UserWidget() {
 
 ---
 
-### 6. **Key Takeaways**
+## 6. **Key Takeaways**
 
 1. **React**: VDOM + Fiber = fast, interactive UI. Hooks run **client-side only**.
 2. **Next.js**: React + SSR, SSG, ISR, routing, SEO optimizations.

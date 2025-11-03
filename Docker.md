@@ -96,7 +96,7 @@ Use hyphens for options; no long dashes.
 
 A Dockerfile defines how to build an image. Basic directives:
 
-```
+```md
 
 FROM \<base\_image>:<tag>
 WORKDIR /app

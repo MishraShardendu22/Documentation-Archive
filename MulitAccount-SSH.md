@@ -171,7 +171,7 @@ Now GitHub shows **“Verified”** next to your commits.
 
 The **DCO (Developer Certificate of Origin)** adds a footer:
 
-```
+```md
 Signed-off-by: MishraShardendu22 <shardendumishrabrave@gmail.com>
 ```
 
